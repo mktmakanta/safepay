@@ -102,3 +102,4 @@ const RegisterPage = () => {
 }
 
 export default RegisterPage
+3
