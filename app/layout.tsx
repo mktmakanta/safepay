@@ -1,7 +1,14 @@
-import type { Metadata } from 'next'
+'use client'
+
+interface Metadata {
+  title: string
+  description: string
+}
+// import type { Metadata } from 'next'
 import './styles/globals.css'
 import { Jost } from 'next/font/google'
 import { ToastProvider } from '@radix-ui/react-toast'
+import Provider from './api/sessionProvider'
 
 const jost = Jost({
   subsets: ['latin'],
@@ -9,7 +16,7 @@ const jost = Jost({
   variable: '--font-jost',
 })
 
-export const metadata: Metadata = {
+export const Metadata = {
   title: 'safepay',
   description: 'A subscription and bills payment online platform',
 }
@@ -26,9 +33,11 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
       <body className={jost.variable}>
-        <ToastProvider>
-          <main className="main">{children}</main>
-        </ToastProvider>
+        <Provider>
+          <ToastProvider>
+            <main className="main">{children}</main>
+          </ToastProvider>
+        </Provider>
       </body>
     </html>
   )
