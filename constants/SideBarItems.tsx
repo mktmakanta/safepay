@@ -1,0 +1,87 @@
+import {
+  ArrowRightLeft,
+  Home,
+  ArrowUpDown,
+  PhoneCall,
+  Cable,
+  CreditCard,
+  Settings,
+  Banknote,
+  User,
+  UserRoundCog,
+  FolderCode,
+  LogOut,
+} from 'lucide-react'
+export const items = [
+  {
+    title: 'Home',
+    url: '#',
+    icon: Home,
+    link: '/dashboard',
+  },
+  {
+    title: 'Buy Data',
+    url: '#',
+    icon: ArrowUpDown,
+    link: '/buydata',
+  },
+  {
+    title: 'Buy Airtime',
+    url: '#',
+    icon: PhoneCall,
+    link: '/buyairtime',
+  },
+  {
+    title: 'Utilities Payment',
+    url: '#',
+    icon: Cable,
+    link: '/utility',
+  },
+  {
+    title: 'Fund Wallet',
+    url: '#',
+    icon: CreditCard,
+    link: '/fundwallet',
+  },
+  {
+    title: 'Wallet Summary',
+    url: '#',
+    icon: ArrowRightLeft,
+    link: '/walletsummary',
+  },
+  {
+    title: 'Pricing',
+    url: '#',
+    icon: Banknote,
+    link: '/pricing',
+  },
+  {
+    title: 'Account',
+    url: '#',
+    icon: User,
+    link: '/account',
+  },
+  {
+    title: 'Change Pin',
+    url: '#',
+    icon: UserRoundCog,
+    link: '/changepassword',
+  },
+  {
+    title: 'Settings',
+    url: '#',
+    icon: Settings,
+    link: '/settings',
+  },
+  {
+    title: "Developer's API",
+    url: '#',
+    icon: FolderCode,
+    link: '/developer-api',
+  },
+  {
+    title: 'Logout',
+    url: '#',
+    icon: LogOut,
+  },
+]
