@@ -14,13 +14,13 @@ const WalletHistory = () => {
         <div className="h-10 w-10 bg-orange-500 rounded-md flex justify-center items-center ">
           <ArrowUpDown className="text-white" />
         </div>
-        <h1>Transactions</h1>
+        <h1>Data Transactions</h1>
       </div>
       <div className="flex items-center gap-3 rounded-md shadow-md ring-1 ring-slate-200 p-3">
         <div className="h-10 w-10 bg-purple-500 rounded-md flex justify-center items-center ">
           <History className="text-white" />
         </div>
-        <h1>Transactions</h1>
+        <h1>Wallet Summary</h1>
       </div>
     </main>
   )

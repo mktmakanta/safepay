@@ -1,7 +1,12 @@
 import React from 'react'
+import BuyDataForm from './sections/BuyDataForm'
 
 const BuyData = () => {
-  return <div>BuyData</div>
+  return (
+    <>
+      <BuyDataForm />
+    </>
+  )
 }
 
 export default BuyData

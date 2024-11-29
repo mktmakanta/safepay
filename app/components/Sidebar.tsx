@@ -3,9 +3,11 @@
 import React from 'react'
 import { HandCoins } from 'lucide-react'
 import ProfileAvatar from './ProfileAvatar'
-import { items } from '@/constants/SideBarItems'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useSelector } from 'react-redux'
+import { items } from '../constants/SideBarItems'
+import { RootState } from '@/Redux/store'
 
 type SidebarItem = {
   title: string
@@ -13,9 +15,10 @@ type SidebarItem = {
   link: string
 }
 
-const SideBar = () => {
-  const pathname = usePathname() // Get the current pathname
-
+const SideBar = ({}: SidebarItem) => {
+  const pathname = usePathname()
+  const balance = useSelector((state: RootState) => state.balance.balance)
+  const formattedBalance = new Intl.NumberFormat().format(balance)
   return (
     <aside className="sidebar group hidden lg:block bg-green-50/50 w-20 hover:w-80 transition-all duration-300 p-2 sticky top-0 h-screen shadow-md z-10">
       {/* Sidebar Header */}
@@ -33,7 +36,7 @@ const SideBar = () => {
           <ProfileAvatar />
           <div className="hidden group-hover:block text-sm">
             <h2>Makanta</h2>
-            <h3 className="text-nowrap">Balance: #17000000</h3>
+            <h3 className="text-nowrap">Balance: ₦ {formattedBalance}</h3>
           </div>
         </div>
 

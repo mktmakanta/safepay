@@ -1,8 +1,15 @@
+'use client'
+
+import { RootState } from '@/app/Redux/store'
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 const TransactionStatistics = () => {
+  const balance = useSelector((state: RootState) => state.balance.balance)
+  const formattedBalance = new Intl.NumberFormat().format(balance)
+
   const data = [
-    { title: 'WALLET BALANCE', amount: '₦17,000.36' },
+    { title: 'WALLET BALANCE', amount: `₦${formattedBalance}` },
     { title: 'TOTAL FUNDING', amount: '₦77,271.46' },
     { title: 'TOTAL SPENT', amount: '₦75828.00' },
   ]
